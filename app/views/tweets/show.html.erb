@@ -1,4 +1,6 @@
 <ul>
+  <%= "Sorry, no tweets for that user" if @tweets.count == 0 %>
+
   <% @tweets.each do |tweet| %>
     <li>
       <%= tweet.created_at %>:<%= tweet.text %>

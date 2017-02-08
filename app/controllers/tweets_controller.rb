@@ -5,7 +5,7 @@ class TweetsController < EndUserController
   end
 
   def show
-    @tweets = GetTweets.from_user(tweets_params[:username])
+    @tweets = TwitterClient.search_user(tweets_params[:username])
   end
 
 private
