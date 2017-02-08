@@ -1,7 +1,8 @@
 <h2>Hello <%= @user.name %></h2>
 <ul>
-  displayed tweets
-  <li>tweet</li>
-  <li>tweet</li>
-  <li>tweett</li>
+  <% @tweets.each do |tweet| %>
+      <li>
+        <%= tweet.created_at %>:<%= tweet.text %>
+      </li>
+  <% end %>
 </ul>
