@@ -1,0 +1,4 @@
+<%= form_tag("/tweets", method: 'post') do %>
+  Twiter Handle: <%= text_field_tag :username %>
+  <%= submit_tag "Search Tweets" %>
+<% end %>

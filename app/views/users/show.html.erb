@@ -1,8 +1,2 @@
 <h2>Hello <%= @user.name %></h2>
-<ul>
-  <% @tweets.each do |tweet| %>
-      <li>
-        <%= tweet.created_at %>:<%= tweet.text %>
-      </li>
-  <% end %>
-</ul>
+<h4><%= link_to "Let's read some tweets!", tweets_new_path %></h4>
