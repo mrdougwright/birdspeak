@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise' # user auth
 gem 'twitter'
+gem 'tachyons-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

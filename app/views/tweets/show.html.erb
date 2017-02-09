@@ -1,9 +1,10 @@
-<ul>
+<ul class="list ma3">
   <%= "Sorry, no tweets for that user" if @tweets.count == 0 %>
 
   <% @tweets.each do |tweet| %>
-    <li>
-      <%= tweet.created_at %>:<%= tweet.text %>
+    <li class="ma2 bg-lightest-blue ba b--dashed br3 pa2 lh-solid grow">
+      <div class='tr'><%= tweet.created_at.to_s(:short) %></div>
+      <div class='tweet'><%= tweet.text %></div>
     </li>
   <% end %>
 </ul>

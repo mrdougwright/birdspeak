@@ -1,7 +1,7 @@
 <% if current_user %>
-  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-  <li><%= link_to 'New Search', tweets_new_path %></li>
+  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'no-underline' %></li>
+  <li><%= link_to 'New Search', tweets_new_path, class: 'no-underline' %></li>
 <% else %>
-  <li><%= link_to 'Signup', new_user_registration_path %></li>
-  <li><%= link_to 'Login', new_user_session_path %></li>
+  <li><%= link_to 'Signup', new_user_registration_path, class: 'no-underline' %></li>
+  <li><%= link_to 'Login', new_user_session_path, class: 'no-underline' %></li>
 <% end %>

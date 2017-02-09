@@ -7,13 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <nav>
+  <nav class="tr bg-green list pa2">
     <%= render 'layouts/nav_menu' %>
   </nav>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body class="bg-light-green navy">
+    <div class="tr pa2">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <main class='pa3'>
+      <%= yield %>
+    </main>
   </body>
 </html>
