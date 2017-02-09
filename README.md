@@ -1,24 +1,35 @@
-# README
+# Bird Speak
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app allows users to read the latest 25 tweets, up to 7 days ago, from any twitter handle.
 
-Things you may want to cover:
+### App Design Choices
+For user authentication, Devise is a no brainer. It's the goto for quick and reliable authentication. For styling, I chose Tachyons because it is also quick, lightweight and prevents me from having to write extra css. For ENV variables, I chose to use dotenv, which allows you to store secret vars in one file.
 
-* Ruby version
+For the application logic, I started at first putting small modules (like Utils and Twitter API) into the lib directory. I like this approach because it's sort of a functional style and it allows for easy unit testing. However, I moved these modules into their own classes, because it was easier to config with Heroku. I also added Redis caching to this class. I could have added basic Rails caching, but I thought it would be fun to spin up a quick Redis db. And finally I added a few mini tests.
 
-* System dependencies
+### Setup Instructions
+- Git clone the repo and cd into the directory.
+- See Doug for the secret .env file and add it to the root of this project. Alternatively, create your own Twitter Dev App (https://apps.twitter.com/) and enter the corresponding values to these four keys:
 
-* Configuration
+    ```
+    TWITTER_CONSUMER_KEY="Your value here, and the others below"
+    TWITTER_CONSUMER_SECRET=
+    TWITTER_ACCESS_TOKEN=
+    TWITTER_ACCESS_SECRET=
+    ```
 
-* Database creation
+- You will also need a Redis server running
 
-* Database initialization
+    ```
+    $ brew install redis
+    $ redis-server /usr/local/etc/redis.conf
+    ```
+    
+- Run `$ bundle`
+- Run `rake db:migrate`
+- Run `rails s` to start up the server on localhost:3000
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Test Suite Instructions
+ - Run `$ rake db:test:prepare`
+ - Run `$ rake test`
