@@ -18,13 +18,14 @@ For the application logic, I started at first putting small modules (like Utils 
     TWITTER_ACCESS_SECRET=
     ```
 
-- You will also need a Redis server running
+- You will also need a Redis & Postgres server running
 
     ```
     $ brew install redis
     $ redis-server /usr/local/etc/redis.conf
+    $ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
     ```
-    
+
 - Run `$ bundle`
 - Run `rake db:migrate`
 - Run `rails s` to start up the server on localhost:3000
