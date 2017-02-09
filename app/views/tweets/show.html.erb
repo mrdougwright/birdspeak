@@ -3,7 +3,7 @@
 
   <% @tweets.each do |tweet| %>
     <li class="ma2 bg-lightest-blue ba b--dashed br3 pa2 lh-solid grow">
-      <div class='tr'><%= tweet.created_at.to_s(:short) %></div>
+      <div class='tr'><%= Utility.format_date(tweet.created_at) %></div>
       <div class='tweet'><%= tweet.text %></div>
     </li>
   <% end %>
