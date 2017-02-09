@@ -8,7 +8,7 @@ class TwitterClient
       tweets = JSON.parse(stored_tweets).map{ |t| OpenStruct.new(t) }
     else
       tweets = TwitterAPI.search("from:#{username}", result_type: "recent").take(count).collect
-      $redis.setex(username, 300, @tweets.to_json)
+      $redis.setex(username, 300, tweets.to_json)
     end
     tweets
   end
